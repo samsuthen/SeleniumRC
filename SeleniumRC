@@ -1,0 +1,28 @@
+
+import org.testng.annotations.Test;
+
+import com.thoughtworks.selenium.DefaultSelenium;
+
+public class RC {
+
+	
+	@Test
+	public static void RC()
+	{
+		DefaultSelenium rc = new DefaultSelenium("localhost",4444,"*firefox","http://demoqa.com");
+		rc.start();
+		rc.open("http://demoqa.com");
+		rc.windowMaximize();
+		rc.click("xpath=.//*[@id='menu-item-374']/a");
+		rc.type("xpath=.//*[@id='name_3_firstname']", "Testname");
+		rc.type("xpath=.//*[@id='name_3_lastname']", "Lastname");
+		
+		
+		rc.select("xpath=.//*[@id='dropdown_7']", "India");
+		rc.captureEntirePageScreenshot("filepath", "");
+		
+	}
+	
+	
+	
+}
